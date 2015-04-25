@@ -14,7 +14,8 @@ Sample loopback app which can be deployed to Google Cloud Platform (GCP)
 # Setting up CI with Jenkins
 https://cloud.google.com/tools/repo/push-to-deploy?hl=en_US&_ga=1.107528961.260942391.1429898500#connect_your_git_repository_to_the_cloud_repository
 
-1. gcloud auth login
+1. Get gcloud from https://cloud.google.com/sdk/#Quick_Start
+2. On your terminal run `gcloud auth login`
 2. Get the name and version number of the most recent Bitnami Jenkins image. 
 `gcloud compute images list --project bitnami-launchpad | grep jenkins`
 3. Run the following to create the Jenkins VM (password is what's used for the Jenkins admin console, and feel free to pick a higher config VM based on values defined in https://cloud.google.com/compute/docs/machine-types).
