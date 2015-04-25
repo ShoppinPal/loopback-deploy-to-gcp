@@ -9,3 +9,4 @@ Sample loopback app which can be deployed to Google Cloud Platform (GCP)
 5. `gcloud preview app run app.yaml`
 6. `gcloud preview app deploy app.yaml`
   1. gcloud preview app deploy app.yaml --project <myProjectID> will also work. But if you've already set the project in a previous step, there isn't really any need for it.
+7. View it at: http://<version>.loopbackers.appspot.com/explorer/
