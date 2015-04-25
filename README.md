@@ -19,7 +19,8 @@ https://cloud.google.com/tools/repo/push-to-deploy?hl=en_US&_ga=1.107528961.2609
 2. Get the name and version number of the most recent Bitnami Jenkins image. 
 `gcloud compute images list --project bitnami-launchpad | grep jenkins`
 3. Run the following to create the Jenkins VM (password is what's used for the Jenkins admin console, and feel free to pick a higher config VM based on values defined in https://cloud.google.com/compute/docs/machine-types).
-```
+
+  ```
     gcloud compute \
         instances create bitnami-jenkins \
         --project double-platform-92304 \
@@ -39,7 +40,7 @@ https://cloud.google.com/tools/repo/push-to-deploy?hl=en_US&_ga=1.107528961.2609
                  "https://www.googleapis.com/auth/projecthosting" \
                  "https://www.googleapis.com/auth/appengine.admin" \
         --tags "bitnami-launchpad"
-```
+  ```
 4. Locate the VM under Compute Engine > VM instances in the GCP dashboard. Click on the IP address and allow HTTP and HTTPS traffic. Optionally CloudFlare (or similar service to assign a domain name - for now we have jenkins.shoppinpal.com). 
 5. Go to http://jenkins.shoppinpal.com/jenkins/manage > manage plugins and pick Git Plugin, GitHub Authn Plugin, GitHub plugin. One or more of these maybe already installed which is fine. Pick the option to install without restart. 
 6. Login to the Jenkins console and choose 'create new job'. Ignore the tooling env settings, doesn't matter since it just seems to be a way to have separate thread executors based on language. 
