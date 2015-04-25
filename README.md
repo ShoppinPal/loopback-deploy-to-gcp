@@ -42,9 +42,12 @@ https://cloud.google.com/tools/repo/push-to-deploy?hl=en_US&_ga=1.107528961.2609
         --tags "bitnami-launchpad"
   ```
 4. Locate the VM under Compute Engine > VM instances in the GCP dashboard. Click on the IP address and allow HTTP and HTTPS traffic. Optionally CloudFlare (or similar service to assign a domain name - for now we have jenkins.shoppinpal.com). 
-5. Go to http://jenkins.shoppinpal.com/jenkins/manage > manage plugins and pick Git Plugin, GitHub Authn Plugin, GitHub plugin. One or more of these maybe already installed which is fine. Pick the option to install without restart. 
+5. Go to `http://jenkins.shoppinpal.com/jenkins/manage > manage plugins` and pick `Git Plugin, GitHub Authn Plugin, GitHub plugin`. One or more of these maybe already installed which is fine. Pick the option to install without restart. 
 6. Login to the Jenkins console and choose 'create new job'. Ignore the tooling env settings, doesn't matter since it just seems to be a way to have separate thread executors based on language. 
 7. Under 'Source Code Management' pick the Git Repo option and give the full URL (the one you'd use for cloning), for e.g. `https://github.com/pulkitsinghal/loopback-deploy-to-gcp.git`. Creds are not needed if its a public repo. 
 8. Set the Repo Browser to 'Auto'. 
 9. Build Trigger > select 'when a change is pushed to GitHub'. 
-10. Setup github webhook linking to Jenkins along the lines of Step5 here http://fourword.fourkitchens.com/article/trigger-jenkins-builds-pushing-github
+10. Setup github webhook linking to Jenkins along the lines of Step5 here: http://fourword.fourkitchens.com/article/trigger-jenkins-builds-pushing-github ... and here are some subtle differences to keep in mind:
+  1. Instead of `.../github-webhook/` we used `.../jenkins/github-webhook/` because that's where jenkins is actually hosted in the bitnami image on GCP.
+  2. For the `Content type` dropdown in `Webhooks / Manage webhook` on the github project, we selected `application/x-www-form-urlencoded` as the value
+  3. We clicked the `Disable SSL Verification` button because while the basic authN should still be secure over https, there is no way for github to validate the server certificate of the generic jenkins image on GCP.
