@@ -47,3 +47,4 @@ https://cloud.google.com/tools/repo/push-to-deploy?hl=en_US&_ga=1.107528961.2609
 7. Under 'Source Code Management' pick the Git Repo option and give the full URL (the one you'd use for cloning), for e.g. `https://github.com/pulkitsinghal/loopback-deploy-to-gcp.git`. Creds are not needed if its a public repo. 
 8. Set the Repo Browser to 'Auto'. 
 9. Build Trigger > select 'when a change is pushed to GitHub'. 
+10. Setup github webhook linking to Jenkins along the lines of Step5 here http://fourword.fourkitchens.com/article/trigger-jenkins-builds-pushing-github
