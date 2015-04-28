@@ -5,5 +5,5 @@ containers:
     image: gcr.io/<project_name>/loopback-deploy-to-gcp
     ports:
       - name: www
-        hostPort: 80
-        containerPort: 80
+        hostPort: 8080
+        containerPort: 8080

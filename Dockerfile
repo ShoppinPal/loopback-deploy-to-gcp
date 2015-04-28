@@ -15,7 +15,7 @@ RUN export NODE_ENV=development
 #ONBUILD ADD node_modules /app/node_modules
 
 RUN set :bind, '0.0.0.0'
-EXPOSE 80
+EXPOSE 8080
 #CMD []
 RUN pwd
 RUN ls -alrt
