@@ -2,7 +2,7 @@ version: 1.0.0
 id: container-vm-loopback
 containers:
   - name: loopback
-    image: gcr.io/<project_name>/loopback-deploy-to-gcp
+    image: gcr.io/double-platform-92304/loopback-deploy-to-gcp
     ports:
       - name: www
         hostPort: 8080

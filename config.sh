@@ -1,9 +1,9 @@
 # This file holds common parameters for the VM start/stop scripts
 
-VM_NAME=
-ZONE=
-MACHINE_TYPE=
-PROJECT_ID=
+VM_NAME=deploy-loopback-to-gce-2
+ZONE=us-central1-a
+MACHINE_TYPE=n1-standard-4
+PROJECT_ID=double-platform-92304
 
 # set project globally
 gcloud config set project ${PROJECT_ID}
