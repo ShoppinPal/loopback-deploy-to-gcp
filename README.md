@@ -1,4 +1,5 @@
 # loopback-deploy-to-gcp
+[![Codeship Status for boennemann/badges](https://www.codeship.io/projects/6527c4b0-d31f-0132-404e-520e92347ccb/status?branch=feature%2Fdeploy-to-google-compute-engine)](https://www.codeship.io/projects/77627)
 
 This is a sample on how to use container VMs for a loopback server. You can read more about containers on GCE [here](https://developers.google.com/compute/docs/containers).
 
